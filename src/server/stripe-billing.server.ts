@@ -4,7 +4,8 @@ import type { BillingPeriod } from "@/lib/commercial-plans";
 
 type Plan = "essencial" | "crescimento" | "profissional";
 type BillingDb = SupabaseClient;
-const SITE_ORIGIN = "https://agenda-sorriso.correo-lucof-708.workers.dev";
+const SITE_ORIGIN = "https://agenda.winp.com.br";
+const LEGACY_ORIGIN = "https://agenda-sorriso.correo-lucof-708.workers.dev";
 
 function stripeClient(): Stripe {
   const key = process.env["STRIPE_SECRET_KEY"];
@@ -31,7 +32,7 @@ function packPriceId(credits: 100 | 500 | 1000): string {
 function safeOrigin(requestOrigin?: string): string {
   if (!requestOrigin) return SITE_ORIGIN;
   const url = new URL(requestOrigin);
-  if (url.origin !== SITE_ORIGIN) throw new Error("Origem de contratação inválida.");
+  if (![SITE_ORIGIN, LEGACY_ORIGIN].includes(url.origin)) throw new Error("Origem de contratação inválida.");
   return url.origin;
 }
 

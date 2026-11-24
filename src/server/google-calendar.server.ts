@@ -1,7 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 type Db = SupabaseClient;
-const ORIGIN = "https://agenda-sorriso.correo-lucof-708.workers.dev";
+const ORIGIN = "https://agenda.winp.com.br";
 const REDIRECT = `${ORIGIN}/api/public/google-calendar/callback`;
 const SCOPE = "https://www.googleapis.com/auth/calendar.events";
 

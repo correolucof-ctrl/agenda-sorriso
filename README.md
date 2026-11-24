@@ -4,7 +4,7 @@ Agenda e atendimento para clínicas odontológicas. Este repositório contém o 
 
 ## Estado
 
-O aplicativo existente está publicado em [agenda-sorriso.correo-lucof-708.workers.dev](https://agenda-sorriso.correo-lucof-708.workers.dev/). A página comercial e o painel administrativo atualizado estão no Worker. **As integrações ainda não foram verificadas de ponta a ponta**: WhatsApp Cloud API por clínica, transcrição, lembretes, Google Calendar e Stripe. Não tratar a presença do código como ativação do serviço. Envios e cobranças reais ficam desativados por padrão.
+O aplicativo está publicado em [agenda.winp.com.br](https://agenda.winp.com.br/), no Worker Cloudflare existente. O endereço técnico `agenda-sorriso.correo-lucof-708.workers.dev` continua disponível durante a transição. **As integrações ainda não foram verificadas de ponta a ponta**: WhatsApp Cloud API por clínica, transcrição, lembretes, Google Calendar e Stripe. Não tratar a presença do código como ativação do serviço. Envios e cobranças reais ficam desativados por padrão.
 
 O fluxo de cadastro com confirmação de e-mail, aprovação administrativa, agenda vazia, primeira consulta e bloqueio após suspensão foi verificado na versão publicada. Os demais critérios de liberação estão em `PLANO-PRODUTO.md`; o checkpoint mais recente fica em `STATUS-2026-11-24.md`.
 
