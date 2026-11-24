@@ -1,0 +1,19 @@
+{
+  "essencial": {
+    "monthly": "price_1Uf4zpCzxqHxGPuIDfEYeUR1",
+    "annual": "price_1Uf50ACzxqHxGPuI3sgSzoDd"
+  },
+  "crescimento": {
+    "monthly": "price_1Uf50BCzxqHxGPuISzXPXH76",
+    "annual": "price_1Uf50CCzxqHxGPuIIl5JwMvp"
+  },
+  "profissional": {
+    "monthly": "price_1Uf50DCzxqHxGPuIP5RpUVVB",
+    "annual": "price_1Uf50DCzxqHxGPuIjZa8Z7MO"
+  },
+  "credit_packs": {
+    "100": "price_1Uf5aECzxqHxGPuIncyxU0Og",
+    "500": "price_1Uf5aZCzxqHxGPuIOHFu4fzN",
+    "1000": "price_1Uf5apCzxqHxGPuIKfsSMi6u"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "agenda-sorriso-jobs",
+  "main": "index.ts",
+  "compatibility_date": "2026-11-23",
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "vars": {
+    "AGENDA_SORRISO_BASE_URL": "https://agenda-sorriso.correo-lucof-708.workers.dev"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1795202126341,
+      "tag": "0000_agenda_sorriso_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795202143139,
+      "tag": "0001_appointments_service_fk_no_action",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795206846145,
+      "tag": "0002_whatsapp_test_mode",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1795206996388,
+      "tag": "0003_whatsapp_single_admin",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1795441078699,
+      "tag": "0004_clinic_commercial_registration",
+      "breakpoints": true
+    }
+  ]
+}
