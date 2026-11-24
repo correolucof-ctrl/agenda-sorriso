@@ -4,7 +4,7 @@ Agenda e atendimento para clínicas odontológicas. Este repositório contém o 
 
 ## Estado
 
-O aplicativo existente está publicado em [agenda-sorriso.correo-lucof-708.workers.dev](https://agenda-sorriso.correo-lucof-708.workers.dev/). **O código deste repositório inclui integrações ainda não publicadas nem verificadas de ponta a ponta**: WhatsApp Cloud API por clínica, transcrição, lembretes, Google Calendar e Stripe. Não tratar a presença do código como ativação do serviço. Envios e cobranças reais ficam desativados por padrão.
+O aplicativo existente está publicado em [agenda-sorriso.correo-lucof-708.workers.dev](https://agenda-sorriso.correo-lucof-708.workers.dev/). A página comercial e o painel administrativo atualizado estão no Worker. **As integrações ainda não foram verificadas de ponta a ponta**: WhatsApp Cloud API por clínica, transcrição, lembretes, Google Calendar e Stripe. Não tratar a presença do código como ativação do serviço. Envios e cobranças reais ficam desativados por padrão.
 
 O fluxo de cadastro com confirmação de e-mail, aprovação administrativa, agenda vazia, primeira consulta e bloqueio após suspensão foi verificado na versão publicada. Os demais critérios de liberação estão em `PLANO-PRODUTO.md`; o checkpoint mais recente fica em `STATUS-2026-11-24.md`.
 
@@ -25,7 +25,7 @@ Copie `.env.example` para `.env.local` e preencha apenas no ambiente local. O ar
 ## Banco e serviços
 
 - `drizzle/migrations/` contém o esquema base exportado. `standalone/0001` a `0003` documentam a separação entre demonstração, clínica real e administrador já aplicada no projeto existente.
-- `standalone/0004` a `0009` preparam cobrança, Google Calendar, WhatsApp por clínica, lembretes, créditos e remoção da concessão administrativa legada. **Ainda não foram aplicadas no Supabase publicado.** Conferir o esquema remoto, backup e reversão antes de aplicá-las em ordem.
+- `standalone/0004` a `0009` preparam cobrança, Google Calendar, WhatsApp por clínica, lembretes, créditos e remoção da concessão administrativa legada. **Foram aplicadas no Supabase existente em 24/11/2026**, após validação conjunta em transação revertida. O checkpoint e as verificações estão em `STATUS-2026-11-24.md`.
 - O mesmo Worker Cloudflare e o mesmo projeto Supabase devem ser reutilizados. Segredos de Stripe, Meta, Google, cron e Supabase são configurados diretamente nos respectivos painéis ou como segredos do Worker; nenhum valor deve entrar no Git.
 - Os identificadores de preços em `config/stripe-test-prices.json` pertencem somente ao ambiente de teste da Stripe.
 

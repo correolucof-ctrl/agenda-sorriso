@@ -49,15 +49,21 @@ export const listClinicWhatsAppNumbers = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
     await requirePlatformAdmin(context as { supabase: SupabaseClient; userId: string });
+    // The clinic approval panel must remain usable while the privileged Worker
+    // key is being configured. Do not expose number-management controls yet.
+    if (!process.env["SUPABASE_SERVICE_ROLE_KEY"]) {
+      return { configured: false, numbers: [] };
+    }
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const db = supabaseAdmin as unknown as SupabaseClient;
     const { data, error } = await db.from("whatsapp_clinic_numbers")
       .select("clinic_id,phone_number_id,display_phone,status,sending_paused,reminder_template_name,reminder_template_language,updated_at");
     if (error) throw new Error("Não foi possível consultar os números oficiais.");
-    return z.object({ clinic_id: z.string().uuid(), phone_number_id: z.string(), display_phone: z.string(),
+    const numbers = z.object({ clinic_id: z.string().uuid(), phone_number_id: z.string(), display_phone: z.string(),
       status: z.enum(["pending", "active", "paused"]), sending_paused: z.boolean(),
       reminder_template_name: z.string().nullable(), reminder_template_language: z.string(),
       updated_at: z.string() }).array().parse(data);
+    return { configured: true, numbers };
   });
 
 export const linkClinicWhatsAppNumber = createServerFn({ method: "POST" })

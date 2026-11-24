@@ -14,8 +14,8 @@ export const Route = createFileRoute("/_authenticated/admin")({
     if (import.meta.env["VITE_STANDALONE"] !== "true") throw redirect({ to: "/painel" });
     const applications = await listCommercialApplications();
     if (!applications) throw redirect({ to: "/painel" });
-    const numbers = await listClinicWhatsAppNumbers();
-    return { applications, numbers };
+    const numberIntegration = await listClinicWhatsAppNumbers();
+    return { applications, numberIntegration };
   },
   component: Administration,
 });
@@ -28,7 +28,7 @@ const statusLabel = {
 };
 
 function Administration() {
-  const { applications, numbers } = Route.useLoaderData();
+  const { applications, numberIntegration } = Route.useLoaderData();
   const decide = useServerFn(decideCommercialAccess);
   const linkNumber = useServerFn(linkClinicWhatsAppNumber);
   const setNumberStatus = useServerFn(setClinicWhatsAppStatus);
@@ -106,7 +106,7 @@ function Administration() {
       {applications.length === 0 && <p className="text-muted-foreground">Nenhum cadastro comercial recebido.</p>}
       <div className="grid gap-4">
         {applications.map((clinic) => {
-          const number = numbers.find((item) => item.clinic_id === clinic.clinic_id);
+          const number = numberIntegration.numbers.find((item) => item.clinic_id === clinic.clinic_id);
           return (
           <Card key={clinic.clinic_id}>
             <CardHeader>
@@ -132,6 +132,7 @@ function Administration() {
               </form>
               <div className="mt-5 border-t pt-5">
                 <h3 className="font-semibold">WhatsApp oficial da clínica</h3>
+                {!numberIntegration.configured ? <p className="mt-2 text-sm text-muted-foreground">A conexão de números será liberada após configurar a chave protegida do servidor.</p> : <>
                 {number ? <div className="mt-2 flex flex-wrap items-center gap-3 text-sm">
                   <span>{number.display_phone} · {number.status === "active" ? "Ativo" : number.status === "paused" ? "Pausado" : "Pendente"}</span>
                   <Button size="sm" variant="outline" disabled={busy || clinic.status !== "approved"} onClick={() => changeNumberStatus(clinic.clinic_id, number.status === "active" ? "paused" : "active")}>
@@ -150,6 +151,7 @@ function Administration() {
                 </form>}
                 {number && <p className="mt-1 text-xs text-muted-foreground">Use um modelo aprovado pela Meta com uma única variável no corpo: {"{{1}}"} receberá a data e hora da consulta. Salvar o nome não ativa envios.</p>}
                 <p className="mt-2 text-xs text-muted-foreground">O token é enviado somente ao servidor do Agenda Sorriso, verificado na Meta e armazenado criptografado. Não o envie por chat.</p>
+                </>}
               </div>
             </CardContent>
           </Card>
