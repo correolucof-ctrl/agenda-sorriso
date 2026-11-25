@@ -178,6 +178,7 @@ function Landing() {
 
       <footer className="border-t py-8 text-center text-sm text-muted-foreground">
         <p>Agenda Sorriso · Atendimento e agenda para clínicas odontológicas. A demonstração usa apenas dados fictícios.</p>
+        <p className="mt-1.5"><Link to="/politica-de-privacidade" className="font-semibold text-foreground underline underline-offset-4 hover:text-primary">Política de Privacidade</Link></p>
         <p className="mt-1.5">
           WhatsApp da equipe:{" "}
           <a

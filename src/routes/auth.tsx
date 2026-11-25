@@ -223,6 +223,7 @@ function AuthPage() {
               </div>
             </>
           )}
+          <p className="mt-6 text-center text-xs text-muted-foreground">Ao usar o serviço, consulte a <Link to="/politica-de-privacidade" className="underline underline-offset-4">Política de Privacidade</Link>.</p>
         </div>
       </div>
       <div className="relative hidden overflow-hidden bg-sidebar lg:flex lg:flex-col lg:justify-center lg:px-14">
