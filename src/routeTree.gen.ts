@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as ExclusaoDeDadosRouteImport } from './routes/exclusao-de-dados'
 import { Route as PlanosRouteImport } from './routes/planos'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
@@ -41,6 +42,11 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExclusaoDeDadosRoute = ExclusaoDeDadosRouteImport.update({
+  id: '/exclusao-de-dados',
+  path: '/exclusao-de-dados',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlanosRoute = PlanosRouteImport.update({
@@ -131,6 +137,7 @@ const ApiPublicWhatsappWebhookRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/exclusao-de-dados': typeof ExclusaoDeDadosRoute
   '/planos': typeof PlanosRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/reset-password': typeof ResetPasswordRoute
@@ -151,6 +158,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/exclusao-de-dados': typeof ExclusaoDeDadosRoute
   '/planos': typeof PlanosRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/reset-password': typeof ResetPasswordRoute
@@ -173,6 +181,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/exclusao-de-dados': typeof ExclusaoDeDadosRoute
   '/planos': typeof PlanosRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/reset-password': typeof ResetPasswordRoute
@@ -195,6 +204,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/exclusao-de-dados'
     | '/planos'
     | '/politica-de-privacidade'
     | '/reset-password'
@@ -215,6 +225,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth'
+    | '/exclusao-de-dados'
     | '/planos'
     | '/politica-de-privacidade'
     | '/reset-password'
@@ -236,6 +247,7 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/exclusao-de-dados'
     | '/planos'
     | '/politica-de-privacidade'
     | '/reset-password'
@@ -258,6 +270,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  ExclusaoDeDadosRoute: typeof ExclusaoDeDadosRoute
   PlanosRoute: typeof PlanosRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
@@ -288,6 +301,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exclusao-de-dados': {
+      id: '/exclusao-de-dados'
+      path: '/exclusao-de-dados'
+      fullPath: '/exclusao-de-dados'
+      preLoaderRoute: typeof ExclusaoDeDadosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/planos': {
@@ -436,6 +456,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  ExclusaoDeDadosRoute: ExclusaoDeDadosRoute,
   PlanosRoute: PlanosRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   ResetPasswordRoute: ResetPasswordRoute,

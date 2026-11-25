@@ -65,6 +65,7 @@ function PrivacyPolicy() {
         <h2 id="direitos" className="text-xl font-bold">6. Seus direitos e contato</h2>
         <p className="leading-7">Você pode solicitar confirmação do tratamento, acesso, correção e, quando aplicável, eliminação, portabilidade ou informações sobre compartilhamento. Envie o pedido para <a className="break-all text-primary underline underline-offset-4" href={`mailto:${SELLER.privacyEmail}`}>{SELLER.privacyEmail}</a>. Podemos solicitar informações para confirmar sua identidade antes de responder.</p>
         <p className="leading-7">Se o pedido tratar de uma consulta ou conversa com uma clínica, procure também a própria clínica, que decide sobre os dados de seus pacientes. Podemos auxiliá-la a atender o pedido.</p>
+        <p className="leading-7">Consulte as <Link to="/exclusao-de-dados" className="text-primary underline underline-offset-4">instruções para solicitar exclusão de dados</Link>.</p>
       </section>
 
       <section className="mt-10 space-y-3" aria-labelledby="alteracoes">
