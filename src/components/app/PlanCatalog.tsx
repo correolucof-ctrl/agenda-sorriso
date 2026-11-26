@@ -45,7 +45,7 @@ export function PlanCatalog({ approvedPlan, onCheckout, onBuyPack, busy }: {
             </article>
           ))}
         </div>
-        <p className="mt-4 text-sm text-muted-foreground">No anual, a franquia continua mensal: não são liberados todos os créditos do ano de uma vez. A clínica precisa de aprovação antes da contratação.</p>
+        <p className="mt-4 text-sm text-muted-foreground">No anual, a franquia continua mensal: não são liberados todos os créditos do ano de uma vez. A clínica precisa de aprovação antes da contratação. WhatsApp, transcrição e Google Agenda dependem da configuração e disponibilidade dos respectivos serviços.</p>
       </section>
 
       <section aria-labelledby="credits-title" className="border-t pt-6">

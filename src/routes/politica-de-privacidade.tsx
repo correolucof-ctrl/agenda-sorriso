@@ -28,7 +28,7 @@ function PrivacyPolicy() {
 
       <section className="mt-10 space-y-3" aria-labelledby="responsavel">
         <h2 id="responsavel" className="text-xl font-bold">1. Quem trata os dados</h2>
-        <p className="leading-7">A plataforma Agenda Sorriso é operada por {SELLER.legalName}, CNPJ {SELLER.cnpj}. Para cadastro, contratação, segurança e administração da plataforma, esse operador decide como os dados são tratados. Para os dados de pacientes inseridos pela clínica ou recebidos no número oficial dela, a clínica define as finalidades do atendimento e da agenda; o Agenda Sorriso presta o serviço tecnológico conforme a configuração da clínica.</p>
+        <p className="leading-7">A plataforma Agenda Sorriso é operada por {SELLER.legalName}, CNPJ {SELLER.cnpj}, com endereço comercial em {SELLER.address}. Para cadastro, contratação, segurança e administração da plataforma, esse operador decide como os dados são tratados. Para os dados de pacientes inseridos pela clínica ou recebidos no número oficial dela, a clínica define as finalidades do atendimento e da agenda; o Agenda Sorriso presta o serviço tecnológico conforme a configuração da clínica.</p>
         <p className="leading-7">Contato para assuntos de privacidade: <a className="break-all text-primary underline underline-offset-4" href={`mailto:${SELLER.privacyEmail}`}>{SELLER.privacyEmail}</a>.</p>
       </section>
 

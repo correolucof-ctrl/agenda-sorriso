@@ -4,7 +4,7 @@
 
 ## A. Minuta
 
-**Fornecedor.** 63.160.079 Fernando Oliveira Cruz, CNPJ 63.160.079/0001-38, endereço comercial **[CONFIRMAR]**, contato `winpsistemas@gmail.com`.
+**Fornecedor.** 63.160.079 Fernando Oliveira Cruz, CNPJ 63.160.079/0001-38, endereço comercial Avenida do Líbano, 249 — Jardim Santo Antônio, Goiânia — GO, 74853-050, contato `winpsistemas@gmail.com`. Endereço informado pelo titular em 25/11/2026; conferir a correspondência com o cadastro empresarial antes de publicar estes termos.
 
 **Serviço.** O Agenda Sorriso oferece software de agenda e atendimento para clínicas odontológicas. A demonstração pública usa dados fictícios, dispensa login e não grava as escolhas da simulação. O serviço real começa com agenda vazia, separada por clínica. O cadastro exige confirmação do e-mail e aprovação do administrador; a criação da conta, por si, não inicia cobrança nem garante aprovação.
 
@@ -16,7 +16,7 @@
 
 **Contratação e pagamento.** Após aprovação e definição do plano, a clínica poderá ser encaminhada ao Checkout da Stripe. A assinatura e os pacotes somente serão reconhecidos após confirmação do pagamento pelo provedor. Atualmente, o Checkout está limitado ao ambiente de teste; nenhuma cobrança real está autorizada. Antes da abertura comercial, a tela final deverá apresentar preço total, periodicidade, condições de renovação, eventual tributo e meios de suporte. **[CONFIRMAR: periodicidade de renovação e política comercial de reajuste.]**
 
-**Cancelamento, arrependimento e reembolso.** A aplicação prevê acesso ao portal de gestão da assinatura da Stripe para clínicas com cliente de cobrança registrado. **[CONFIRMAR: configuração efetiva do portal, momento em que o cancelamento encerra o acesso, tratamento de créditos adicionais e procedimento de reembolso.]** Direitos legais eventualmente aplicáveis, inclusive arrependimento em contratação a distância quando a relação se enquadrar como consumo, permanecem preservados. O enquadramento de cada contratação e o texto final desta cláusula exigem revisão jurídica.
+**Cancelamento, arrependimento e reembolso — PROPOSTA, NÃO APROVADA.** A clínica pode solicitar o cancelamento a qualquer momento pelo portal de cobrança, se habilitado, ou pelo contato de suporte. A renovação automática deixa de ocorrer após o cancelamento confirmado; o acesso pago continua até o fim do período já quitado, salvo obrigação legal ou acordo específico em sentido diverso. Os créditos incluídos renovam a cada período mensal e não se acumulam. Créditos extras comprados permanecem registrados após a renovação da franquia, mas seu uso requer assinatura ativa. Reembolsos e estornos serão analisados individualmente pelo canal de suporte, preservados os direitos legais aplicáveis e as hipóteses de falha do serviço. **[CONFIRMAR COM TITULAR E PROFISSIONAL: prazo de atendimento do pedido, tratamento dos créditos extras após encerramento definitivo, reembolso proporcional, arrependimento e procedimento operacional na Stripe.]** A aplicação prevê acesso ao portal Stripe, mas a configuração efetiva de cancelamento nele ainda precisa ser testada.
 
 **Integrações.** WhatsApp, transcrição, lembretes e Google Agenda dependem da conexão e configuração da clínica e da disponibilidade dos provedores. A publicação do aplicativo Meta e os testes técnicos não representam ativação automática de envios reais. A clínica só recebe mensagens no número que conectar oficialmente. **[CONFIRMAR: condições de suporte, disponibilidade e manutenção.]**
 
@@ -30,7 +30,7 @@
 
 | Item | Estado | Responsável |
 | --- | --- | --- |
-| Identificação do fornecedor e CNPJ | Constam do código; conferir titularidade e endereço comercial | Titular |
+| Identificação do fornecedor e CNPJ | Endereço informado pelo titular; conferir titularidade e correspondência com o cadastro empresarial | Titular |
 | Preços, franquias e consumo | Extraídos de `src/lib/commercial-plans.ts`; validar oferta final e Stripe real | Titular |
 | Renovação, reajuste, cancelamento e reembolso | Regras comerciais não definidas por completo | Titular e advogado(a) |
 | Direito de arrependimento | Confirmar aplicação ao público B2B e redigir procedimento | Advogado(a) |
